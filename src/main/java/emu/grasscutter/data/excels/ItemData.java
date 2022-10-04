@@ -75,7 +75,7 @@ public class ItemData extends GameResource {
     private int comfort;
     private List<Integer> furnType;
     private List<Integer> furnitureGadgetID;
-    @SerializedName("JFDLJGDFIGL")
+    @SerializedName(value="OHIANNAEEAK", alternate={"DANFGGLKLNO", "JFDLJGDFIGL"})
     private int roomSceneId;
 
     // Custom
@@ -120,6 +120,9 @@ public class ItemData extends GameResource {
         if (this.getFurnitureGadgetID() != null) {
             this.furnitureGadgetID = this.furnitureGadgetID.stream().filter(x -> x > 0).toList();
         }
+
+        // Prevent material type from being null
+        this.materialType = this.materialType == null ? MaterialType.MATERIAL_NONE : this.materialType;
     }
 
     @Getter

@@ -89,7 +89,7 @@ public class EnergyManager extends BasePlayerManager {
 
         // If we don't have any data for this avatar, stop.
         if (!skillParticleGenerationData.containsKey(avatarId)) {
-            //Grasscutter.getLogger().warn("No particle generation data for avatarId {} found.", avatarId);
+            Grasscutter.getLogger().warn("No particle generation data for avatarId {} found.", avatarId);
         }
         // If we do have data, roll for how many particles we should generate.
         else {
